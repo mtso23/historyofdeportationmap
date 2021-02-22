@@ -65,7 +65,7 @@
             context.beginPath();
             if (this.style === 'circle') {
                 context.arc(0, 0, this.size, 0, Math.PI * 2, false);
-            } else if (this.style === 'arrow') {
+            } else if (this.style === 'circle') {
                 // 将箭头后退，让箭头的尖头指向终点
                 context.moveTo(-this.size*2, -this.size);
                 context.lineTo(-this.size*5/4, 0);
@@ -243,7 +243,7 @@
                 x: 50,
                 y: 80,
                 rotation: 50 * Math.PI / 180,
-                style: 'arrow',
+                style: 'circle',
                 color: 'rgb(255, 255, 255)',
                 size: size+1,
                 borderWidth: size ,
@@ -377,7 +377,7 @@
                         x: element.to[0],
                         y: element.to[1],
                         rotation: arc.endAngle + Math.PI / 2,
-                        style: 'arrow',
+                        style: 'circle',
                         color: element.color,
                         size: element.arcWidth || this.style.arc.width+3,
                         borderWidth: 0,
