@@ -1,6 +1,6 @@
-I"Ò<h2 id="youre-ready-to-go">Youâ€™re ready to go!</h2>
+I"m<h2 id="a-history-of-deportaton-test">A History of Deportaton Test</h2>
 
-<p>Start developing your Jekyll website.</p>
+<p>See map below for animation</p>
 
 <html lang="en">
 
@@ -27,9 +27,14 @@
         z-index: 10000;
     }
     .btn{
-        border-color:gray;
-        border-width: 2px;
-        background-color:white;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
    }
     </style>
 </head>
@@ -47,7 +52,7 @@
     <script src="./lib/leaflet.js"></script>
     <script src="./src/src.js"></script>
     <script>
-        var lrmap = L.map('map').setView([35, -95], 5);
+        var lrmap = L.map('map').setView([25, -40], 3);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
@@ -65,9 +70,9 @@
         var migrationLayer = new L.migrationLayer({
             map: lrmap,
             data: data,
-            pulseRadius:20,
+            pulseRadius:30,
             pulseBorderWidth:3,
-            arcWidth:0,
+            arcWidth:1,
             arcLabel:true,
             arcLabelFont:'10px sans-serif',
             maxWidth:10

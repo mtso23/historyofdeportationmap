@@ -3,9 +3,9 @@ layout: default
 title: "A History of Deportation Test Map"
 ---
 
-## You're ready to go!
+## A History of Deportaton Test
 
-Get started on your Jekyll site!
+See map below for animation
 
 <html lang="en">
 
