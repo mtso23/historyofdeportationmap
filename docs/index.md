@@ -3,10 +3,6 @@ layout: default
 title: "A History of Deportation Test Map"
 ---
 
-## You're ready to go!
-
-Start developing your Jekyll website.
-
 <html lang="en">
 
 <head>
@@ -19,12 +15,12 @@ Start developing your Jekyll website.
         padding: 0;
     }
     #map{
-        position: absolute;
+        position: relative;
         height: 100%;
         width: 100%;
     }
     #event{
-        position: absolute;
+        position: relative;
         top: 50px;
         right: 600px;
         height: 100px;
