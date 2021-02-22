@@ -15,12 +15,12 @@ title: "A History of Deportation Test Map"
         padding: 0;
     }
     #map{
-        position: relative;
+        position: absolute;
         height: 100%;
         width: 100%;
     }
     #event{
-        position: relative;
+        position: absolute;
         top: 50px;
         right: 600px;
         height: 100px;
