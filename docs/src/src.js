@@ -125,8 +125,8 @@
             context.save();
             context.lineWidth = this.lineWidth;
             context.strokeStyle = this.strokeStyle;
-            context.shadowColor = this.strokeStyle;
-            context.shadowBlur = this.shadowBlur || 2;
+            //context.shadowColor = this.strokeStyle;
+            //context.shadowBlur = this.shadowBlur || 2;
 
             context.beginPath();
             context.arc(this.centerX, this.centerY, this.radius, this.startAngle, this.endAngle, false);
@@ -223,13 +223,13 @@
                 }
             }
 
-            this.tailPointsCount = 50; // 拖尾点数
+            this.tailPointsCount = 50; // Tail animation
             this.centerX = centerX;
             this.centerY = centerY;
             this.startAngle = startAngle;
             this.endAngle = endAngle;
             this.radius = radius;
-            this.lineWidth = options.width || 1;
+            //this.lineWidth = options.width || 1;
             this.strokeStyle = options.color || '#fff';
             this.factor = 2 / this.radius;
             this.deltaAngle = (80 / Math.min(this.radius, 400)) / this.tailPointsCount;
@@ -257,7 +257,7 @@
             // context.lineWidth = 5;
             context.strokeStyle = strokeColor;
             context.shadowColor = this.strokeStyle;
-            // context.shadowBlur = 5;
+            //context.shadowBlur = 5;
             context.lineCap = "round";
             context.beginPath();
             context.arc(this.centerX, this.centerY, this.radius, startAngle, endAngle, false);
@@ -267,7 +267,7 @@
 
         S.prototype.draw = function (context) {
             var endAngle = this.endAngle;
-            // 匀速
+            // Uniform Speed
             var angle = this.trailAngle + this.factor;
             var strokeColor = this.strokeStyle;
             if (this.animateBlur) {
@@ -278,7 +278,7 @@
 
             this.drawArc(context, strokeColor, this.lineWidth, this.startAngle, this.arcAngle);
 
-            // 拖尾效果
+            // Tailing Effect
             var count = this.tailPointsCount;
             for (var i = 0; i < count; i++) {
                 var arcColor = utils.calculateColor(this.strokeStyle, 0.3 - 0.3 / count * i);
@@ -345,14 +345,14 @@
                 pulses: [],
                 sparks: []
             };
-            // 更新状态
+            // 更新状态 update status
             this.playAnimation = true;
             this.started = false;
             // 清除绘画实例，如果没有这个方法，多次调用start，相当于存在多个动画队列同时进行
             window.cancelAnimationFrame(this.requestAnimationId);
         };
         /*
-         * 更新数据
+         * update data
         */
         M.prototype.updateData = function (data) {
             if (!data || data.length === 0) {
@@ -438,6 +438,12 @@
         return M;
     })();
 
+    //create tooltip
+    //var popup = L.popup()
+    //.setContent("I am a standalone popup.");
+
+    //Marker.bindPopup(popup).openPopup();
+
     L.MigrationLayer = L.Class.extend({
         options: {
             map: {},
@@ -506,7 +512,9 @@
             var bounds = this._map.getBounds();
             var topleft = bounds.getNorthWest();
             var topLeftscreen = this._map.latLngToContainerPoint(topleft);
-            //当地图缩放或者平移到整个地图的范围小于外层容器的范围的时候，要对this.container进行上下平移操作，反之则回归原位
+            //when the map is zooomed or panned to the extent that the range of 
+            //the entire map is smaller than the range of the outer container, correct this.container, 
+            //perform up and down translation operations, otherwise return to original position
             if (topLeftscreen.y > 0) {
                 this.container.style.top = -topLeftscreen.y + 'px';
             } else {
@@ -646,9 +654,9 @@
         },
         destroy: function () {
             this.migration.clear();
-            //移除dom
+            //remove dom
             this.container.parentNode.removeChild(this.container);
-            //移除事件监听
+            //remove event listener
             //this._map.clearAllEventListeners();
             this.mapHandles = [];
         }

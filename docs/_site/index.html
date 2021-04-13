@@ -7,88 +7,55 @@
     <link rel="stylesheet" href="/assets/css/main.scss">
   </head>
   <body>
-    <h2 id="a-history-of-deportaton-test">A History of Deportaton Test</h2>
-
-<p>See map below for animation</p>
-
-<html lang="en">
+    <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <title>Migration Layer</title>
     <link rel="stylesheet" href="./lib/leaflet.css" />
-    <style>
-    html,body{
-        margin: 0;
-        padding: 0;
-    }
-    #map{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-    }
-    #event{
-        position: absolute;
-        top: 50px;
-        right: 600px;
-        height: 100px;
-        width: 400px;
-        z-index: 10000;
-    }
-    .btn{
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 5px 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-   }
-    </style>
+    <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
 
 <body>
+    <h1>A History of US Deportation</h1>
+    <p></p>
     <div id="map"></div>
     <div id="event">
-        <input type="button" value="setData" class="btn" onclick="setData()" />
-        <input type="button" value="hide" class="btn" onclick="hide()" />
-        <input type="button" value="show" class="btn" onclick="show()" />
-        <input type="button" value="pause" class="btn" onclick="pause()" />
-        <input type="button" value="play" class="btn" onclick="play()" />
-        <input type="button" value="destroy" class="btn" onclick="destroy()" />
+    <!--<input type="button" value="setData" class="btn" onclick="setData()"> -->
+    <!-- <input type="button" value="hide" class="btn" onclick="hide()">
+        <input type="button" value="show" class="btn" onclick="show()"> -->
+        <input type="button" value="Pause" class="btn" onclick="pause()" />
+        <input type="button" value="Play" class="btn" onclick="play()" />
+    <!--<input type="button" value="destroy" class="btn" onclick="destroy()"> -->    
     </div>
     <script src="./lib/leaflet.js"></script>
     <script src="./src/src.js"></script>
+    <script type="text/javascript" src="./src/data_config.js"></script>
+    <script type="text/javascript" src="./src/data_new.js"></script>
     <script>
-        var lrmap = L.map('map').setView([25, -40], 3);
+        var lrmap = L.map('map', {zoomControl: false}).setView([25, 0], 3);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
-	maxZoom: 19
+	maxZoom: 19,
 })
         .addTo(lrmap);
-        
-        var data = [{"from":[-95.712891,37.090240],"to":[-102.552788,23.634501],"labels":["United States","Mexico"],"color":"#ff3a31", "value":27118},{"from":[-95.712891,37.090240],"to":[-106.346771,56.130367],"labels":[null,"Canada"],"color":"#ff7e2b","value":1267},{"from":[-95.712891,37.090240],"to":[-88.896530,13.794185],"labels":[null,"El Salvador"],"color":"#ffc726","value":2117},{"from":[-95.712891,37.090240],"to":[-3.435973,55.378052],"labels":[null,"United Kingdom"],"color":"#e9ff20", "value":248}];
-        
+        var data = [{"from":[-95.712891,37.090240],"to":[-102.552788,23.634501],"labels":["United States","Mexico"],"color":"#ff3a31", "value":27118},{"from":[-95.712891,37.090240],"to":[-106.346771,56.130367],"labels":[null,"Canada"],"color":"#ff7e2b","value":1267},{"from":[-95.712891,37.090240],"to":[-88.896530,13.794185],"labels":[null,"El Salvador"],"color":"#ffc726","value":2117},{"from":[-95.712891,37.090240],"to":[-3.435973,55.378052],"labels":[null,"United Kingdom"],"color":"#e9ff20", "value":248},{"from":[-95.712891,37.090240],"to":[-77.32573,18.15246],"labels":[null,"Jamaica"],"color":"#d77681", "value":1044}];
         var data2=[{"from":[-73.875523,40.781063],"to":[-80.247887,25.792296],"labels":["New York","Miami"],"color":"#d7768a"},{"from":[-73.875523,40.781063],"to":[-118.2705,33.9984],"labels":[null,"Los Angeles"],"color":"#00ccff"},{"from":[-73.875523,40.781063],"to":[-87.724088,41.917846],"labels":[null,"Chicago"],"color":"#ffc726"},{"from":[-73.875523,40.781063],"to":[-71.058437,42.35902],"labels":[null,"Boston"],"color":"#e9ff20"},{"from":[-73.875523,40.781063],"to":[-75.683057,45.42172],"labels":[null,"Ottawa"],"color":"#99ff1b"}];
-
         //data = data.map(item => { return {...item, value: parseInt(Math.random()*20)}});
         data2 = data2.map(item => { return {...item, value: parseInt(Math.random()*20)}});
-
         var migrationLayer = new L.migrationLayer({
             map: lrmap,
-            data: data,
+            data: data_im,
             pulseRadius:30,
-            pulseBorderWidth:3,
-            arcWidth:1,
+            pulseBorderWidth:1,
+            arcWidth:.5,
             arcLabel:true,
             arcLabelFont:'10px sans-serif',
-            maxWidth:10
+            maxWidth:15
             }
         );
         migrationLayer.addTo(lrmap);
-
         function setData(){
             migrationLayer.setData(data2);
         }
@@ -108,6 +75,12 @@
             migrationLayer.destroy();
         }
     </script>
+    <div id="year">
+        <p class="yr">1993</p>
+    </div> 
+    <div class="container">
+        <p class="topright">Top 5</p>
+    </div> 
 </body>
 
 </html>

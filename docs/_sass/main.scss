@@ -2,8 +2,26 @@ $backgroundColor: #ffffff;
 $bodyColor: #000000;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500&display=swap');
+$roboto-mono: 'Roboto Mono', monospace;
+
+// Styles
 body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
+}
+
+h1 {
+  font-family: $roboto-mono;
+  font-weight: normal;
+  font-size: 18px;
+  color: red;
+}
+
+.container-lg {
+  max-width: 1012px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
