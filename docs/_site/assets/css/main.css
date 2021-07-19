@@ -46,16 +46,6 @@ h1 {
   z-index: 5;
 }
 
-#year {
-  position: absolute;
-  width: 50px;
-  padding: 50px;
-  top: 75px;
-  right: 50px;
-  left: 50px;
-  z-index: 5;
-}
-
 .yr {
   font-family: 'Roboto-Mono', monospace;
   font-size: 42px;
@@ -78,11 +68,28 @@ h1 {
 .topright {
   position: absolute;
   top: 8px;
-  right: 16px;
+  right: 20px;
   z-index: 10;
+  background: green;
+  padding: 50px;
 }
 
 .top5 {
   font-family: 'Roboto-Mono', monospace;
   font-size: 24px;
+}
+
+.center {
+border: 5px solid yellow;
+text-align: center;
+padding: 10px;
+}
+
+.year {
+  position: absolute;
+  padding: 20px;
+  top: 10px;
+  left: 50px;
+  z-index: 10;
+  background: green;
 }

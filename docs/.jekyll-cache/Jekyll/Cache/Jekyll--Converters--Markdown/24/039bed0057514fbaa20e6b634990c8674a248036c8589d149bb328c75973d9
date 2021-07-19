@@ -1,4 +1,4 @@
-I"<html lang="en">
+I"¬<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
     <h1>A History of US Deportation</h1>
     <p></p>
     <div id="map"></div>
-    <div id="event">
+    <div class="center">
     <!--<input type="button" value="setData" class="btn" onclick="setData()"> -->
     <!-- <input type="button" value="hide" class="btn" onclick="hide()">
         <input type="button" value="show" class="btn" onclick="show()"> -->
@@ -47,9 +47,6 @@
             }
         );
         migrationLayer.addTo(lrmap);
-        var popup = L.popup()
-            .setContent("I am a standalone popup.");
-        Marker.bindPopup(popup).openPopup();
         function setData(){
             migrationLayer.setData(data2);
         }
@@ -69,7 +66,7 @@
             migrationLayer.destroy();
         }
     </script>
-    <div id="year">
+    <div id="year" class="year">
         <p class="yr">1993</p>
     </div> 
     <div class="container">

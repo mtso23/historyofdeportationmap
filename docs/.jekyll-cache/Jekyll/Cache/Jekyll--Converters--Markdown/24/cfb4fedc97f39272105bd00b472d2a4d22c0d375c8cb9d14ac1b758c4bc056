@@ -1,12 +1,7 @@
----
-layout: default
-title: "A History of Deportation Test Map"
----
-
-<html lang="en">
+I"¢<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Migration Layer</title>
     <link rel="stylesheet" href="./lib/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -16,18 +11,18 @@ title: "A History of Deportation Test Map"
     <h1>A History of US Deportation</h1>
     <p></p>
     <div id="map"></div>
-    <div class = "center">
+    <div class="center">
     <!--<input type="button" value="setData" class="btn" onclick="setData()"> -->
     <!-- <input type="button" value="hide" class="btn" onclick="hide()">
         <input type="button" value="show" class="btn" onclick="show()"> -->
-        <input type="button" value="Pause" class="btn" onclick="pause()">
-        <input type="button" value="Play" class="btn" onclick="play()">
+        <input type="button" value="Pause" class="btn" onclick="pause()" />
+        <input type="button" value="Play" class="btn" onclick="play()" />
     <!--<input type="button" value="destroy" class="btn" onclick="destroy()"> -->    
     </div>
     <script src="./lib/leaflet.js"></script>
-    <script src='./src/src.js'></script>
-    <script type="text/javascript" src='./src/data_config.js'></script>
-    <script type="text/javascript" src='./src/data_new.js'></script>
+    <script src="./src/src.js"></script>
+    <script type="text/javascript" src="./src/data_config.js"></script>
+    <script type="text/javascript" src="./src/data_new.js"></script>
     <script>
         var lrmap = L.map('map', {zoomControl: false}).setView([25, 0], 3);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
@@ -71,14 +66,13 @@ title: "A History of Deportation Test Map"
             migrationLayer.destroy();
         }
     </script>
-    <div class="container">
     <div class="year">
-        <p class='yr'>1993</p>
+        <p class="yr">1993</p>
     </div> 
-    </div>
     <div class="container">
-        <p class='topright'>Top 5</p>
+        <p class="topright">Top 5</p>
     </div> 
 </body>
 
 </html>
+:ET
